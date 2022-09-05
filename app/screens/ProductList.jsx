@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, ScrollView } from "react-native";
 import React from "react";
 import Card from "../components/Card";
+
 export default function ProductList() {
   return (
     <ScrollView>
