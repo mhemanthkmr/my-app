@@ -19,12 +19,12 @@ export default function ProductList() {
         <Card
           title="Red Jacket for Sale"
           subTitle="$100"
-          image={require("../assets/chair.jpg")}
+          image={require("../assets/jacket.jpg")}
         />
         <Card
           title="Red Jacket for Sale"
           subTitle="$200"
-          image={require("../assets/background.jpg")}
+          image={require("../assets/couch.jpg")}
         />
         <Card
           title="Red Jacket for Sale"
@@ -39,12 +39,12 @@ export default function ProductList() {
         <Card
           title="Red Jacket for Sale"
           subTitle="$100"
-          image={require("../assets/chair.jpg")}
+          image={require("../assets/jacket.jpg")}
         />
         <Card
           title="Red Jacket for Sale"
           subTitle="$200"
-          image={require("../assets/background.jpg")}
+          image={require("../assets/couch.jpg")}
         />
       </View>
     </ScrollView>
