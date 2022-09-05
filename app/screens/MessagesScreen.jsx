@@ -4,6 +4,7 @@ import ListItem from "../components/ListItem";
 import Screens from "../components/Screens";
 import colors from "../config/colors";
 import ListItemSeperator from "../components/ListItemSeperator";
+import ListItemDeleteAction from "../components/ListItemDeleteAction";
 
 const messages = [
   {
@@ -37,6 +38,8 @@ export default function MessagesScreen() {
             title={item.title}
             subTitle={item.description}
             image={item.image}
+            onPress={() => console.log("Mesage Clicked", item)}
+            renderRightActions={() => <ListItemDeleteAction />}
           />
         )}
         ItemSeparatorComponent={() => <ListItemSeperator />}
