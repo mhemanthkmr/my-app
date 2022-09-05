@@ -1,6 +1,7 @@
-import { Image, StyleSheet, View } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import React from "react";
 import colors from "../config/colors";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 export default function ImageScreen() {
   return (
@@ -10,8 +11,16 @@ export default function ImageScreen() {
         style={styles.image}
         source={require("../assets/chair.jpg")}
       />
-      <View style={styles.leftButton} />
-      <View style={styles.rightButton}></View>
+      <TouchableOpacity style={styles.closeIcon}>
+        <MaterialCommunityIcons name="close" color="white" size={35} />
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.deleteIcon}>
+        <MaterialCommunityIcons
+          name="trash-can-outline"
+          color="white"
+          size={35}
+        />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -25,20 +34,16 @@ const styles = StyleSheet.create({
     backgroundColor: colors.black,
     flex: 1,
   },
-  leftButton: {
+  closeIcon: {
     position: "absolute",
-    top: 50,
-    left: 40,
-    backgroundColor: colors.primary,
-    width: 50,
-    height: 50,
+    top: 40,
+    left: 30,
+    color: colors.white,
   },
-  rightButton: {
+  deleteIcon: {
     position: "absolute",
-    top: 50,
-    right: 40,
-    backgroundColor: colors.secondary,
-    width: 50,
-    height: 50,
+    top: 40,
+    right: 30,
+    color: colors.white,
   },
 });
