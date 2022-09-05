@@ -13,8 +13,10 @@ import Card from "./app/components/Card";
 import ProductList from "./app/screens/ProductList";
 import ListingDetails from "./app/components/ListingDetails";
 import ImageScreen from "./app/screens/ImageScreen";
+import MessagesScreen from "./app/screens/MessagesScreen";
 export default function App() {
   // return <ListingDetails image={require("./app/assets/chair.jpg")} />;
   // return <ProductList />;
-  return <ImageScreen />;
+  // return <ImageScreen />;
+  return <MessagesScreen />;
 }
