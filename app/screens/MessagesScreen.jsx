@@ -6,28 +6,33 @@ import colors from "../config/colors";
 import ListItemSeperator from "../components/ListItemSeperator";
 import ListItemDeleteAction from "../components/ListItemDeleteAction";
 
-const messages = [
+const initialMessages = [
   {
     id: 1,
-    title: "T1",
-    description: "D1",
+    title: "HemanthKumar M",
+    description: "How are you Sir ?",
     image: require("../assets/profile.jpg"),
   },
   {
     id: 2,
-    title: "T2",
-    description: "D2",
+    title: "Jorge Kum",
+    description: "Where is my Product ?",
     image: require("../assets/couch.jpg"),
   },
   {
     id: 3,
-    title: "T3",
-    description: "D3",
+    title: "Jeff Besozz",
+    description: "Give me 10$ I am Hungry.",
     image: require("../assets/jacket.jpg"),
   },
 ];
 
 export default function MessagesScreen() {
+  const [messages, setMessages] = useState(initialMessages);
+  const handleDelete = (message) => {
+    const newMessages = messages.filter((m) => m.id !== message.id);
+    setMessages(newMessages);
+  };
   return (
     <Screens>
       <FlatList
@@ -39,7 +44,9 @@ export default function MessagesScreen() {
             subTitle={item.description}
             image={item.image}
             onPress={() => console.log("Mesage Clicked", item)}
-            renderRightActions={() => <ListItemDeleteAction />}
+            renderRightActions={() => (
+              <ListItemDeleteAction onPress={() => handleDelete(item)} />
+            )}
           />
         )}
         ItemSeparatorComponent={() => <ListItemSeperator />}
