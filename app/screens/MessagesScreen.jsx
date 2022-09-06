@@ -1,10 +1,11 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import React, { useState } from "react";
 import ListItem from "../components/ListItem";
 import Screens from "../components/Screens";
 import colors from "../config/colors";
 import ListItemSeperator from "../components/ListItemSeperator";
 import ListItemDeleteAction from "../components/ListItemDeleteAction";
+import { FlatList } from "react-native-gesture-handler";
 
 const initialMessages = [
   {
@@ -29,6 +30,7 @@ const initialMessages = [
 
 export default function MessagesScreen() {
   const [messages, setMessages] = useState(initialMessages);
+  const [Refresh, setRefresh] = useState(false);
   const handleDelete = (message) => {
     const newMessages = messages.filter((m) => m.id !== message.id);
     setMessages(newMessages);
@@ -47,6 +49,17 @@ export default function MessagesScreen() {
             renderRightActions={() => (
               <ListItemDeleteAction onPress={() => handleDelete(item)} />
             )}
+            refreshing={Refresh}
+            onRefresh={() => {
+              setMessages([
+                {
+                  id: 3,
+                  title: "Jeff Besozz",
+                  description: "Give me 10$ I am Hungry.",
+                  image: require("../assets/jacket.jpg"),
+                },
+              ]);
+            }}
           />
         )}
         ItemSeparatorComponent={() => <ListItemSeperator />}
