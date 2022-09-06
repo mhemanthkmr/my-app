@@ -1,5 +1,5 @@
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import ListItem from "../components/ListItem";
 import Screens from "../components/Screens";
 import colors from "../config/colors";
