@@ -14,9 +14,11 @@ import ProductList from "./app/screens/ProductList";
 import ListingDetails from "./app/components/ListingDetails";
 import ImageScreen from "./app/screens/ImageScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
+import Icon from "./app/components/Icon";
 export default function App() {
   // return <ListingDetails image={require("./app/assets/chair.jpg")} />;
   // return <ProductList />;
   // return <ImageScreen />;
-  return <MessagesScreen />;
+  // return <MessagesScreen />;
+  return <Icon name="email" size={100} backgroundcolor="red" />;
 }
