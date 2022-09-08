@@ -17,21 +17,23 @@ import MessagesScreen from "./app/screens/MessagesScreen";
 import Icon from "./app/components/Icon";
 import Screens from "./app/components/Screens";
 import ListItem from "./app/components/ListItem";
+import AcountScreen from "./app/screens/AcountScreen";
 export default function App() {
   // return <ListingDetails image={require("./app/assets/chair.jpg")} />;
   // return <ProductList />;
   // return <ImageScreen />;
   // return <MessagesScreen />;
   return (
-    <Screens>
-      <ListItem
-        title="Message"
-        IconComponent={<Icon name="email" size={45} backgroundcolor="red" />}
-      />
-      <ListItem
-        title="Notifications"
-        IconComponent={<Icon name="bell" size={45} backgroundcolor="blue" />}
-      />
-    </Screens>
+    // <Screens>
+    //   <ListItem
+    //     title="Message"
+    //     IconComponent={<Icon name="email" size={45} backgroundcolor="red" />}
+    //   />
+    //   <ListItem
+    //     title="Notifications"
+    //     IconComponent={<Icon name="bell" size={45} backgroundcolor="blue" />}
+    //   />
+    // </Screens>
+    <AcountScreen />
   );
 }
