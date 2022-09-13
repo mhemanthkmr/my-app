@@ -1,4 +1,4 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import Screens from "../components/Screens";
 import Card from "../components/Card";
@@ -18,10 +18,16 @@ const listing = [
     image: require("../assets/couch.jpg"),
   },
   {
-    id: 2,
+    id: 3,
     title: "Couch for Sale",
     price: 200,
     image: require("../assets/couch.jpg"),
+  },
+  {
+    id: 4,
+    title: "Chair for Sale",
+    price: 380,
+    image: require("../assets/chair.jpg"),
   },
 ];
 
