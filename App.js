@@ -18,6 +18,7 @@ import Icon from "./app/components/Icon";
 import Screens from "./app/components/Screens";
 import ListItem from "./app/components/ListItem";
 import AcountScreen from "./app/screens/AcountScreen";
+import ListingScreen from "./app/screens/ListingScreen";
 export default function App() {
   // return <ListingDetails image={require("./app/assets/chair.jpg")} />;
   // return <ProductList />;
@@ -34,6 +35,6 @@ export default function App() {
     //     IconComponent={<Icon name="bell" size={45} backgroundcolor="blue" />}
     //   />
     // </Screens>
-    <AcountScreen />
+    <ListingScreen />
   );
 }
