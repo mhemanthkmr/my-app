@@ -35,6 +35,9 @@ export default function App() {
     //     IconComponent={<Icon name="bell" size={45} backgroundcolor="blue" />}
     //   />
     // </Screens>
-    <ListingScreen />
+
+    <ScrollView nestedScrollEnabled={true}>
+      <ListingScreen />
+    </ScrollView>
   );
 }
