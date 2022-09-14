@@ -4,6 +4,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TextInput,
   Touchable,
   TouchableOpacity,
   View,
@@ -19,11 +20,15 @@ import Screens from "./app/components/Screens";
 import ListItem from "./app/components/ListItem";
 import AcountScreen from "./app/screens/AcountScreen";
 import ListingScreen from "./app/screens/ListingScreen";
+import colors from "./app/config/colors";
+import { useState } from "react";
+import AppTextInput from "./app/components/AppTextInput";
 export default function App() {
   // return <ListingDetails image={require("./app/assets/chair.jpg")} />;
   // return <ProductList />;
   // return <ImageScreen />;
   // return <MessagesScreen />;
+  const [text, setText] = useState("");
   return (
     // <Screens>
     //   <ListItem
@@ -35,9 +40,8 @@ export default function App() {
     //     IconComponent={<Icon name="bell" size={45} backgroundcolor="blue" />}
     //   />
     // </Screens>
-
-    <ScrollView nestedScrollEnabled={true}>
-      <ListingScreen />
-    </ScrollView>
+    <Screens>
+      <AppTextInput placeholder="Email" icons="email" />
+    </Screens>
   );
 }
