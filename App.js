@@ -3,6 +3,7 @@ import {
   SafeAreaView,
   ScrollView,
   StyleSheet,
+  Switch,
   Text,
   TextInput,
   Touchable,
@@ -23,12 +24,18 @@ import ListingScreen from "./app/screens/ListingScreen";
 import colors from "./app/config/colors";
 import { useState } from "react";
 import AppTextInput from "./app/components/AppTextInput";
+import AppPicker from "./app/components/AppPicker";
 export default function App() {
   // return <ListingDetails image={require("./app/assets/chair.jpg")} />;
   // return <ProductList />;
   // return <ImageScreen />;
   // return <MessagesScreen />;
-  const [text, setText] = useState("");
+  const categories = [
+    { label: "Furniture", value: 1 },
+    { label: "Clothing", value: 2 },
+    { label: "Cameras", value: 3 },
+  ];
+  const [text, setText] = useState(false);
   return (
     // <Screens>
     //   <ListItem
@@ -41,7 +48,9 @@ export default function App() {
     //   />
     // </Screens>
     <Screens>
-      <AppTextInput placeholder="Email" icons="email" />
+      <AppPicker item={categories} placeholder="Catogory" icons="apps" />
+      {/* <Text>{text === false ? 123 : 098}</Text> */}
+      <Switch value={text} onValueChange={(newValue) => setText(newValue)} />
     </Screens>
   );
 }
