@@ -2,18 +2,18 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
-export default function AppTextInput({ icons, placeholder }) {
+export default function AppTextInput({ icons, ...otherprops }) {
   return (
     <View style={styles.container}>
       {icons && (
         <MaterialCommunityIcons
-          style={styles.color}
+          style={styles.icon}
           color={colors.medium}
           name={icons}
           size={20}
         />
       )}
-      <TextInput placeholder={placeholder} />
+      <TextInput style={styles.textinput} {...otherprops} />
     </View>
   );
 }
