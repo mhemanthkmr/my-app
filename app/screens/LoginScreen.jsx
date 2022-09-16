@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Screens from "../components/Screens";
 import AppTextInput from "../components/AppTextInput";
 import AppButton from "../components/AppButton";
+import colors from "../config/colors";
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,7 +27,12 @@ export default function LoginScreen() {
         onChangeText={(text) => setPassword(text)}
         secureTextEntry
       />
-      <AppButton title="Login" onPress={() => console.log(email, password)} />
+      <View style={styles.divider} />
+      <AppButton
+        title="Login"
+        color={colors.primary}
+        onPress={() => console.log(email, password)}
+      />
     </Screens>
   );
 }
@@ -41,5 +47,8 @@ const styles = StyleSheet.create({
   },
   container: {
     padding: 10,
+  },
+  divider: {
+    marginVertical: 10,
   },
 });
