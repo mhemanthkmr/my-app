@@ -6,14 +6,18 @@ import {
   Button,
   TouchableWithoutFeedback,
   View,
+  FlatList,
 } from "react-native";
 import React, { useState } from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import colors from "../config/colors";
 import AppButton from "./AppButton";
+import PickerItem from "./PickerItem";
 export default function AppPicker({
   icons,
   items,
+  selectedItem,
+  onSelectItem,
   placeholder,
   ...otherprops
 }) {
@@ -30,7 +34,9 @@ export default function AppPicker({
               size={20}
             />
           )}
-          <Text style={styles.textinput}>{placeholder}</Text>
+          <Text style={styles.textinput}>
+            {selectedItem ? selectedItem.label : placeholder}
+          </Text>
           <MaterialCommunityIcons
             style={styles.icon}
             color={colors.medium}
@@ -43,7 +49,23 @@ export default function AppPicker({
         <AppButton
           title="Close"
           color={colors.secondary}
-          onPress={() => setModalVisible(false)}
+          onPress={() => {
+            setModalVisible(false);
+          }}
+        />
+        <FlatList
+          data={items}
+          keyExtractor={(item) => item.value.toString()}
+          renderItem={({ item }) => (
+            <PickerItem
+              label={item.label}
+              onPress={() => {
+                setModalVisible(false);
+                onSelectItem(item);
+                console.log(item.label);
+              }}
+            />
+          )}
         />
       </Modal>
     </>
