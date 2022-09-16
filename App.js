@@ -47,10 +47,7 @@ export default function App() {
     //     IconComponent={<Icon name="bell" size={45} backgroundcolor="blue" />}
     //   />
     // </Screens>
-    <Screens>
-      <AppPicker item={categories} placeholder="Catogory" icons="apps" />
-      {/* <Text>{text === false ? 123 : 098}</Text> */}
-      <Switch value={text} onValueChange={(newValue) => setText(newValue)} />
-    </Screens>
+
+    <WelcomeScreen />
   );
 }
