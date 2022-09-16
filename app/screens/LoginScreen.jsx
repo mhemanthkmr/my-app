@@ -4,6 +4,7 @@ import Screens from "../components/Screens";
 import AppTextInput from "../components/AppTextInput";
 import AppButton from "../components/AppButton";
 import colors from "../config/colors";
+import AppText from "../components/AppText";
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,7 +28,7 @@ export default function LoginScreen() {
         onChangeText={(text) => setPassword(text)}
         secureTextEntry
       />
-      <View style={styles.divider} />
+      <AppText style={styles.forgotPassword}>Forget Password ?</AppText>
       <AppButton
         title="Login"
         color={colors.primary}
@@ -48,7 +49,10 @@ const styles = StyleSheet.create({
   container: {
     padding: 10,
   },
-  divider: {
+  forgotPassword: {
     marginVertical: 10,
+    alignSelf: "flex-end",
+    marginRight: 10,
+    fontSize: 15,
   },
 });
