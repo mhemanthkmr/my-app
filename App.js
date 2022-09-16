@@ -35,7 +35,8 @@ export default function App() {
     { label: "Clothing", value: 2 },
     { label: "Cameras", value: 3 },
   ];
-  const [text, setText] = useState(false);
+  const [category, setCategory] = useState(categories[0]);
+
   return (
     // <Screens>
     //   <ListItem
@@ -48,6 +49,12 @@ export default function App() {
     //   />
     // </Screens>
 
-    <WelcomeScreen />
+    <AppPicker
+      selectedItem={category}
+      onSelectItem={(item) => setCategory(item)}
+      placeholder="Category"
+      icons="apps"
+      items={categories}
+    />
   );
 }
