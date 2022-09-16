@@ -25,6 +25,7 @@ import colors from "./app/config/colors";
 import { useState } from "react";
 import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
+import LoginScreen from "./app/screens/LoginScreen";
 export default function App() {
   // return <ListingDetails image={require("./app/assets/chair.jpg")} />;
   // return <ProductList />;
@@ -37,24 +38,5 @@ export default function App() {
   ];
   const [category, setCategory] = useState(categories[0]);
 
-  return (
-    // <Screens>
-    //   <ListItem
-    //     title="Message"
-    //     IconComponent={<Icon name="email" size={45} backgroundcolor="red" />}
-    //   />
-    //   <ListItem
-    //     title="Notifications"
-    //     IconComponent={<Icon name="bell" size={45} backgroundcolor="blue" />}
-    //   />
-    // </Screens>
-
-    <AppPicker
-      selectedItem={category}
-      onSelectItem={(item) => setCategory(item)}
-      placeholder="Category"
-      icons="apps"
-      items={categories}
-    />
-  );
+  return <LoginScreen />;
 }
