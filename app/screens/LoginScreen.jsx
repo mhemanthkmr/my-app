@@ -24,7 +24,7 @@ export default function LoginScreen() {
         placeholder="Password"
         icons="lock"
         autoCapitalize="none"
-        autoCorrect="false"
+        autoCorrect={false}
         onChangeText={(text) => setPassword(text)}
         secureTextEntry
       />
