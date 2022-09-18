@@ -10,7 +10,7 @@ export default function AppTextInput({ icons, ...otherprops }) {
           style={styles.icon}
           color={colors.medium}
           name={icons}
-          size={20}
+          size={25}
         />
       )}
       <TextInput style={styles.textinput} {...otherprops} />
