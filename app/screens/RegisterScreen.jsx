@@ -61,7 +61,7 @@ export default function RegisterScreen() {
             )}
             <AppText style={styles.forgotPassword}>Forget Password ?</AppText>
             <AppButton
-              title="Login"
+              title="SignUp"
               color={colors.primary}
               onPress={handleSubmit}
             />
