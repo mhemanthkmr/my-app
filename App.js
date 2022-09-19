@@ -14,12 +14,19 @@ const TweetDetails = () => {
   </Screen>;
 };
 
+const TweetDetails2 = () => {
+  <Screen>
+    <Text>TweetDetails2</Text>
+  </Screen>;
+};
+
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
   <Stack.Navigator>
     <Stack.Screen name="Tweets" component={Tweets} />
     <Stack.Screen name="TweetDetail" component={TweetDetails} />
+    <Stack.Screen name="TweetDetails2" component={TweetDetails2} />
   </Stack.Navigator>;
 };
 export default function App() {
