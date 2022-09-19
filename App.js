@@ -1,44 +1,33 @@
-import { StatusBar } from "expo-status-bar";
-import {
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Switch,
-  Text,
-  TextInput,
-  Touchable,
-  TouchableOpacity,
-  View,
-} from "react-native";
-import WelcomeScreen from "./app/screens/WelcomeScreen";
-import Card from "./app/components/Card";
-import ProductList from "./app/screens/ProductList";
-import ListingDetails from "./app/components/ListingDetails";
-import ImageScreen from "./app/screens/ImageScreen";
-import MessagesScreen from "./app/screens/MessagesScreen";
-import Icon from "./app/components/Icon";
-import Screens from "./app/components/Screens";
-import ListItem from "./app/components/ListItem";
-import AcountScreen from "./app/screens/AcountScreen";
-import ListingScreen from "./app/screens/ListingScreen";
-import colors from "./app/config/colors";
-import { useState } from "react";
-import AppTextInput from "./app/components/AppTextInput";
-import AppPicker from "./app/components/AppPicker";
-import LoginScreen from "./app/screens/LoginScreen";
-import RegisterScreen from "./app/screens/RegisterScreen";
-import ListingEditScreen from "./app/screens/ListingEditScreen";
-export default function App() {
-  // return <ListingDetails image={require("./app/assets/chair.jpg")} />;
-  // return <ProductList />;
-  // return <ImageScreen />;
-  // return <MessagesScreen />;
-  const categories = [
-    { label: "Furniture", value: 1 },
-    { label: "Clothing", value: 2 },
-    { label: "Cameras", value: 3 },
-  ];
-  const [category, setCategory] = useState(categories[0]);
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { NavigationContainer } from "@react-navigation/native";
+const Tweets = () => {
+  <Screen>
+    <Text>Hello Word</Text>
+  </Screen>;
+};
 
-  return <ListingEditScreen />;
+const TweetDetails = () => {
+  <Screen>
+    <Text>TweetDetails</Text>
+  </Screen>;
+};
+
+const Stack = createNativeStackNavigator();
+
+const StackNavigator = () => {
+  <Stack.Navigator>
+    <Stack.Screen name="Tweets" component={Tweets} />
+    <Stack.Screen name="TweetDetail" component={TweetDetails} />
+  </Stack.Navigator>;
+};
+export default function App() {
+  return (
+    <NavigationContainer>
+      <StackNavigator />
+    </NavigationContainer>
+  );
 }
+
+const styles = StyleSheet.create({});
