@@ -12,7 +12,7 @@ const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
   password: Yup.string().required().min(4).label("Password"),
 });
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
@@ -54,7 +54,10 @@ export default function LoginScreen() {
             <AppButton
               title="Login"
               color={colors.primary}
-              onPress={handleSubmit}
+              onPress={() => {
+                handleSubmit();
+                navigation.navigate("ListingScreen");
+              }}
             />
           </>
         )}
