@@ -1,4 +1,12 @@
-import { FlatList, ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  FlatList,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+  Platform,
+  StatusBar,
+} from "react-native";
 import React from "react";
 import Screens from "../components/Screens";
 import Card from "../components/Card";
@@ -33,7 +41,7 @@ const listing = [
 
 export default function ListingScreen() {
   return (
-    <Screens style={styles.screen}>
+    <ScrollView nestedScrollEnabled={false} style={styles.screen}>
       <FlatList
         data={listing}
         keyExtractor={(listing) => listing.id.toString()}
@@ -44,8 +52,10 @@ export default function ListingScreen() {
             image={item.image}
           />
         )}
+        // ListHeaderComponent={ContentThatGoesAboveTheFlatList}
+        // ListFooterComponent={ContentThatGoesBelowTheFlatList}
       />
-    </Screens>
+    </ScrollView>
   );
 }
 
@@ -53,5 +63,6 @@ const styles = StyleSheet.create({
   screen: {
     backgroundColor: colors.light,
     padding: 20,
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
 });
