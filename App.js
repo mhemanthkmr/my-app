@@ -85,7 +85,7 @@ function App() {
               backgroundColor: "tomato",
             },
             headerTintColor: "white",
-            headerShown: false,
+            // headerShown: false,
           }}
           component={ListingScreen}
         />
