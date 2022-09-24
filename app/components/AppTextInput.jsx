@@ -27,6 +27,9 @@ const styles = StyleSheet.create({
     padding: 15,
     marginVertical: 10,
   },
+  icons: {
+    flexDirection: 12,
+  },
   textinput: {
     fontSize: 18,
     color: colors.dark,
