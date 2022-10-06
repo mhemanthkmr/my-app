@@ -7,6 +7,7 @@ import WelcomeScreen from "./app/screens/WelcomeScreen";
 import LoginScreen from "./app/screens/LoginScreen";
 import RegisterScreen from "./app/screens/RegisterScreen";
 import ListingScreen from "./app/screens/ListingScreen";
+import Catogeries from "./app/components/Categories";
 
 function HomeScreen({ navigation }) {
   return (
@@ -32,66 +33,67 @@ const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Home"
-          options={{
-            headerStyle: {
-              backgroundColor: "tomato",
-            },
-            headerTintColor: "white",
-            headerShown: false,
-          }}
-          component={WelcomeScreen}
-        />
-        <Stack.Screen
-          name="MessageScreen"
-          options={{
-            headerStyle: {
-              backgroundColor: "tomato",
-            },
-            headerTintColor: "white",
-            headerShown: false,
-          }}
-          component={MessagesScreen}
-        />
-        <Stack.Screen
-          name="LoginScreen"
-          options={{
-            headerStyle: {
-              backgroundColor: "tomato",
-            },
-            headerTintColor: "white",
-            headerShown: false,
-          }}
-          component={LoginScreen}
-        />
-        <Stack.Screen
-          name="RegisterScreen"
-          options={{
-            headerStyle: {
-              backgroundColor: "tomato",
-            },
-            headerTintColor: "white",
-            headerShown: false,
-          }}
-          component={RegisterScreen}
-        />
-        <Stack.Screen
-          name="ListingScreen"
-          options={{
-            headerStyle: {
-              backgroundColor: "tomato",
-            },
-            headerTintColor: "white",
-            // headerShown: false,
-          }}
-          component={ListingScreen}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    // <NavigationContainer>
+    //   <Stack.Navigator initialRouteName="Home">
+    //     <Stack.Screen
+    //       name="Home"
+    //       options={{
+    //         headerStyle: {
+    //           backgroundColor: "tomato",
+    //         },
+    //         headerTintColor: "white",
+    //         headerShown: false,
+    //       }}
+    //       component={WelcomeScreen}
+    //     />
+    //     <Stack.Screen
+    //       name="MessageScreen"
+    //       options={{
+    //         headerStyle: {
+    //           backgroundColor: "tomato",
+    //         },
+    //         headerTintColor: "white",
+    //         headerShown: false,
+    //       }}
+    //       component={MessagesScreen}
+    //     />
+    //     <Stack.Screen
+    //       name="LoginScreen"
+    //       options={{
+    //         headerStyle: {
+    //           backgroundColor: "tomato",
+    //         },
+    //         headerTintColor: "white",
+    //         headerShown: false,
+    //       }}
+    //       component={LoginScreen}
+    //     />
+    //     <Stack.Screen
+    //       name="RegisterScreen"
+    //       options={{
+    //         headerStyle: {
+    //           backgroundColor: "tomato",
+    //         },
+    //         headerTintColor: "white",
+    //         headerShown: false,
+    //       }}
+    //       component={RegisterScreen}
+    //     />
+    //     <Stack.Screen
+    //       name="ListingScreen"
+    //       options={{
+    //         headerStyle: {
+    //           backgroundColor: "tomato",
+    //         },
+    //         headerTintColor: "white",
+    //         // headerShown: false,
+    //       }}
+    //       component={ListingScreen}
+    //     />
+    //   </Stack.Navigator>
+    // </NavigationContainer>
     // <ListingScreen />
+    <Catogeries />
   );
 }
 
